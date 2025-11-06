@@ -1,28 +1,22 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Sections from './components/Sections.jsx';
+import Contact from './components/Contact.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen bg-[#0a0b10] text-zinc-100 scroll-smooth">
+      {/* Ambient background gradients */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute -top-20 -left-10 h-[40rem] w-[40rem] rounded-full bg-gradient-to-br from-indigo-700/30 via-purple-700/20 to-cyan-600/20 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[35rem] w-[35rem] rounded-full bg-gradient-to-tr from-cyan-600/20 via-indigo-700/20 to-purple-700/30 blur-3xl" />
       </div>
-    </div>
-  )
-}
 
-export default App
+      <Navbar />
+      <Hero />
+      <Sections />
+      <Contact />
+    </div>
+  );
+}
